@@ -1,7 +1,7 @@
 import React from "react";
 
-const Result = ({ result }) => {
-  console.log("result is in result file ", result);
+const Result = ({ input }) => {
+  console.log(input)
 
   return (
     <div id="result">
@@ -15,7 +15,7 @@ const Result = ({ result }) => {
             <th>Invested Capital</th>
           </tr>
         </thead>
-        {result.map((res) => (
+        {/* {input.map((res) => (
           <tbody key={res.year}>
             <tr>
               <td>{res.year}</td>
@@ -25,7 +25,7 @@ const Result = ({ result }) => {
               <td>{res.annualInvestment * res.interest}</td>
             </tr>
           </tbody>
-        ))}
+        ))} */}
       </table>
     </div>
   );
