@@ -1,4 +1,3 @@
-// UserInput.jsx
 import React, { useState } from "react";
 
 const UserInput = ({ calculateInvestment }) => {
@@ -22,7 +21,7 @@ const UserInput = ({ calculateInvestment }) => {
   return (
     <section id="user-input">
       <div className="input-group">
-        <div>
+        <p>
           <label htmlFor="initial-investment">INITIAL INVESTMENT</label>
           <input
             id="initial-investment"
@@ -31,8 +30,8 @@ const UserInput = ({ calculateInvestment }) => {
             value={inputValues.initialInvestment}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </p>
+        <p>
           <label htmlFor="annual-investment">ANNUAL INVESTMENT</label>
           <input
             id="annual-investment"
@@ -41,8 +40,10 @@ const UserInput = ({ calculateInvestment }) => {
             value={inputValues.annualInvestment}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </p>
+      </div>
+      <div className="input-group">
+        <p>
           <label htmlFor="expected-return">EXPECTED RETURN</label>
           <input
             id="expected-return"
@@ -51,8 +52,8 @@ const UserInput = ({ calculateInvestment }) => {
             value={inputValues.expectedReturn}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </p>
+        <p>
           <label htmlFor="duration">DURATION</label>
           <input
             id="duration"
@@ -61,7 +62,7 @@ const UserInput = ({ calculateInvestment }) => {
             value={inputValues.duration}
             onChange={handleInputChange}
           />
-        </div>
+        </p>
       </div>
     </section>
   );
