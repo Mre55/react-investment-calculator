@@ -29,6 +29,7 @@ const UserInput = ({ calculateInvestment }) => {
             type="number"
             value={inputValues.initialInvestment}
             onChange={handleInputChange}
+            required
           />
         </p>
         <p>
@@ -39,6 +40,7 @@ const UserInput = ({ calculateInvestment }) => {
             type="number"
             value={inputValues.annualInvestment}
             onChange={handleInputChange}
+            required
           />
         </p>
       </div>
@@ -51,6 +53,7 @@ const UserInput = ({ calculateInvestment }) => {
             type="number"
             value={inputValues.expectedReturn}
             onChange={handleInputChange}
+            required
           />
         </p>
         <p>
@@ -61,6 +64,7 @@ const UserInput = ({ calculateInvestment }) => {
             type="number"
             value={inputValues.duration}
             onChange={handleInputChange}
+            required
           />
         </p>
       </div>
