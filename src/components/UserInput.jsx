@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 
 const UserInput = ({ calculateInvestment }) => {
-  const [inputValues, setInputValues] = useState({
-    initialInvestment: "",
-    annualInvestment: "",
-    expectedReturn: "",
-    duration: "",
+  const [userInput, setUserInput] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
   });
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setInputValues({
-      ...inputValues,
-      [name]: value,
+  const handleChange = (inputIdentifier, newValue) => {
+    setUserInput((prevUserInput) => {
+      return {
+        ...prevUserInput,
+        [inputIdentifier]: newValue,
+      };
     });
 
     calculateInvestment(inputValues);
@@ -25,10 +26,11 @@ const UserInput = ({ calculateInvestment }) => {
           <label htmlFor="initial-investment">INITIAL INVESTMENT</label>
           <input
             id="initial-investment"
-            name="initialInvestment"
             type="number"
-            value={inputValues.initialInvestment}
-            onChange={handleInputChange}
+            value={userInput.initialInvestment}
+            onChange={(event) =>
+              handleChange("initialInvestment", event.target.value)
+            }
             required
           />
         </p>
@@ -36,10 +38,11 @@ const UserInput = ({ calculateInvestment }) => {
           <label htmlFor="annual-investment">ANNUAL INVESTMENT</label>
           <input
             id="annual-investment"
-            name="annualInvestment"
             type="number"
-            value={inputValues.annualInvestment}
-            onChange={handleInputChange}
+            value={userInput.annualInvestment}
+            onChange={(event) =>
+              handleChange("annualInvestment", event.target.value)
+            }
             required
           />
         </p>
@@ -49,10 +52,11 @@ const UserInput = ({ calculateInvestment }) => {
           <label htmlFor="expected-return">EXPECTED RETURN</label>
           <input
             id="expected-return"
-            name="expectedReturn"
             type="number"
-            value={inputValues.expectedReturn}
-            onChange={handleInputChange}
+            value={userInput.expectedReturn}
+            onChange={(event) =>
+              handleChange("expectedReturn", event.target.value)
+            }
             required
           />
         </p>
@@ -60,10 +64,9 @@ const UserInput = ({ calculateInvestment }) => {
           <label htmlFor="duration">DURATION</label>
           <input
             id="duration"
-            name="duration"
             type="number"
-            value={inputValues.duration}
-            onChange={handleInputChange}
+            value={userInput.duration}
+            onChange={(event) => handleChange("duration", event.target.value)}
             required
           />
         </p>
