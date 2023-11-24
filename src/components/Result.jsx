@@ -1,7 +1,10 @@
 import React from "react";
+import { calculateInvestmentResults } from "../util/investment";
 
 const Result = ({ input }) => {
-  console.log(input)
+  const resultsData = calculateInvestmentResults(input);
+
+  console.log(resultsData);
 
   return (
     <div id="result">
