@@ -1,11 +1,9 @@
-import React from "react";
-
-import investmentCalculatorLogo from "../assets/investment-calculator-logo.png";
+import logo from "../assets/investment-calculator-logo.png";
 
 const Header = () => {
   return (
     <div id="header">
-      <img src={investmentCalculatorLogo} alt="Investment calculator logo" />
+      <img src={logo} alt="Logo showing a money bag" />
       <h1>Investment Calculator</h1>
     </div>
   );
